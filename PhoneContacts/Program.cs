@@ -10,7 +10,7 @@ namespace PhoneContacts
                 loggingServices = new LoggingServices();
 
             loggingServices.LoggingInformation("" +
-                "\t\t\t\t Welcome to the Phone Contacts ");
+                "\t\t\t\t Welcome to the Phone Contacts App");
 
             IHomeServices 
                 homeServices = new HomeServices();
