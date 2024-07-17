@@ -11,4 +11,4 @@ PhoneContacts is a simple console application for managing a list of phone conta
 - **Show All Contacts**: Display all contacts with their names and phone numbers.
 - **Persistent Storage**: Contacts are saved in a text file, ensuring data is retained between sessions.
 
-![Gif](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/WindowsTerminal_1vySRQ70Da.mp4)
+![Gif](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Demo.gif)
