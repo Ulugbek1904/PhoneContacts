@@ -9,13 +9,13 @@ namespace PhoneContacts
             ILoggingServices 
                 loggingServices = new LoggingServices();
 
-            loggingServices.LoggingInformation("" +
+            loggingServices.LogInfo("" +
                 "\t\t\t\t Welcome to the Phone Contacts App");
 
             IHomeServices 
                 homeServices = new HomeServices();
 
-            homeServices.Home();
+            homeServices.LoadMenu();
         }
     }
 }

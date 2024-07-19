@@ -12,24 +12,26 @@
             this.loggingServices = new LoggingServices();
         }
 
-        public void Home()
+        public void LoadMenu()
         {
             while (true)
             {
                 string menu = "" +
                     "1. My Contacts\n" +
-                    "2. Add contact\n" +
-                    "3. delete contact\n" +
-                    "4. Exit\n";
+                    "2. Search contact\n" +
+                    "3. Add contact\n" +
+                    "4. update contact\n" +
+                    "5. delete contact\n" +
+                    "6. Exit\n";
 
-                this.loggingServices.LoggingInformation(
+                this.loggingServices.LogInfo(
                     "====== Menu ======\n");
 
                 this.loggingServices.
-                    LoggingInformation(menu);
+                    LogInfo(menu);
 
                 this.loggingServices.
-                    LoggingInformation("Choose one : ");
+                    LogInfo("Choose one : ");
                 try
                 {
                     string userInput = Console.ReadLine();
@@ -40,12 +42,18 @@
                             this.contactservices.ShowAllContacts();
                             break;
                         case 2:
-                            this.contactservices.AddContact();
+                            this.contactservices.SearchContact();
                             break;
                         case 3:
-                            this.contactservices.DeleteContact();
+                            this.contactservices.AddContact();
                             break;
                         case 4:
+                            this.contactservices.EditContact();
+                            break;
+                        case 5:
+                            this.contactservices.DeleteContact();
+                            break;
+                        case 6:
                             Exit();
                             break;
                         default:
@@ -55,12 +63,12 @@
                 }
                 catch (ArgumentOutOfRangeException exc)
                 {
-                    loggingServices.LoggingError(
+                    loggingServices.LogError(
                         $"{exc.Message}. Try again");
                 }
                 catch (Exception exc)
                 {
-                    loggingServices.LoggingError(
+                    loggingServices.LogError(
                         $"{exc.Message}. Try again");
                 }
             }

@@ -2,7 +2,7 @@
 {
     public interface ILoggingServices
     {
-        void LoggingInformation(string message);
-        void LoggingError(string message);
+        void LogInfo(string message);
+        void LogError(string message);
     }
 }

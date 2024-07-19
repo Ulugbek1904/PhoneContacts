@@ -20,20 +20,66 @@ namespace PhoneContacts.Services
             Console.Clear();
             if (phoneContacts.Count == 0)
             {
-                loggingServices.LoggingInformation(
+                loggingServices.LogInfo(
                     "Your contacts list is empty.\n");
 
                 return;
             }
 
             loggingServices.
-                LoggingInformation("Your contact list:");
+                LogInfo("Your contact list:");
 
             for (int i = 0; i < phoneContacts.Count; i++)
             {
-                loggingServices.LoggingInformation(
+                loggingServices.LogInfo(
                     $"{i + 1}. Name: {phoneContacts[i].Name}" +
                     $" Number: {phoneContacts[i].PhoneNumber}\n");
+            }
+        }
+
+        public void SearchContact()
+        {
+            Console.Clear();
+            loggingServices.LogInfo
+                ("Enter a part of phone number ");
+
+            try
+            {
+                string userInput = Console.ReadLine();  
+                if(!string.IsNullOrEmpty(userInput))
+                {
+                    List<PhoneContact> contacts = new List<PhoneContact>();
+                    foreach(var contact in phoneContacts)
+                    {
+                        if (contact.PhoneNumber.Contains(userInput))
+                        {
+                            contacts.Add(contact);
+                        }
+                    }
+                    if (contacts.Count > 0)
+                    {
+                        foreach (var foundContact in contacts)
+                        {
+                            loggingServices.LogInfo($"Name :" +
+                                $" {foundContact.Name} Number : " +
+                                $"{foundContact.PhoneNumber}");
+                        }
+                    }
+                    else
+                    {
+                        loggingServices.LogError("No contacts found!");
+                    }
+                }
+                else
+                {
+                    loggingServices.LogError
+                        ("Input cannot be empty. " +
+                        "Please try again.");
+                }
+            }
+            catch (ArgumentException exp)
+            {
+                loggingServices.LogError($"{exp.Message} Try again");
             }
         }
 
@@ -46,7 +92,7 @@ namespace PhoneContacts.Services
                 try
                 {
                     loggingServices.
-                        LoggingInformation
+                        LogInfo
                         ("Enter name: ");
 
                     string newName = Console.ReadLine();
@@ -56,7 +102,7 @@ namespace PhoneContacts.Services
                             ("This space must be filled");
                     
                     loggingServices.
-                        LoggingInformation
+                        LogInfo
                         ("Enter number: ");
 
                     string newNumber = Console.ReadLine();
@@ -89,14 +135,79 @@ namespace PhoneContacts.Services
                     fileServices.AddContact(newContact);
 
                     loggingServices.
-                        LoggingInformation
+                        LogInfo
                         ("Contact added successfully!\n");
                     isAdded = true;
                 }
                 catch (ArgumentException exc)
                 {
-                    loggingServices.LoggingError($"{exc.Message} Try again");
+                    loggingServices.LogError($"{exc.Message} Try again");
                 }
+            }
+        }
+
+        public void EditContact()
+        {
+            Console.Clear();
+
+            loggingServices.
+                LogInfo("Enter" +
+                " the index of the contact " +
+                "you want to Edit: ");
+
+            try
+            {
+                string userInput = Console.ReadLine();
+                int index = int.Parse(userInput);
+                if (index > 0 && index <= phoneContacts.Count)
+                {
+                    index--;
+
+                    loggingServices.
+                        LogInfo
+                        ("Enter new name: ");
+
+                    string newName = Console.ReadLine();
+                    if (string.IsNullOrEmpty(newName))
+
+                        throw new Exception
+                            ("This space must be filled");
+
+                    loggingServices.
+                        LogInfo
+                        ("Enter new  number: ");
+
+                    string newNumber = Console.ReadLine();
+
+                    if (string.IsNullOrEmpty(newNumber))
+                        throw new ArgumentException
+                            ("This space must be filled.");
+
+                    else if (!newNumber.StartsWith("+"))
+                        throw new ArgumentException
+                            ("Phone Number must start with +.");
+
+                    else if (newNumber.Length < 10
+                            || newNumber.Length > 14)
+
+                        throw new ArgumentException
+                            ("Invalid phone number length.");
+
+                    phoneContacts[index].Name = newName;
+                    phoneContacts[index].PhoneNumber = newNumber;
+
+                    // after Edited this method save data again in phoneContact.txt
+                    fileServices.SaveAllContacts(phoneContacts);
+
+                    loggingServices.LogInfo
+                        ("Contact edited successfully!\n");
+                }
+                else
+                    throw new ArgumentException("Invalid contact number");
+            }
+            catch (ArgumentException exc)
+            {
+                loggingServices.LogError(exc.Message);
             }
         }
 
@@ -104,7 +215,7 @@ namespace PhoneContacts.Services
         {
             Console.Clear();
             loggingServices.
-                LoggingInformation("Enter" +
+                LogInfo("Enter" +
                 " the index of the contact " +
                 "you want to delete: ");
 
@@ -120,7 +231,7 @@ namespace PhoneContacts.Services
                     // after deleted this method save data again in phoneContact.txt
                     fileServices.SaveAllContacts(phoneContacts);
 
-                    loggingServices.LoggingInformation
+                    loggingServices.LogInfo
                         ("Contact deleted successfully!\n");
                 }
                 else
@@ -128,7 +239,7 @@ namespace PhoneContacts.Services
             }
             catch(ArgumentException exc)
             {
-                loggingServices.LoggingError(exc.Message);
+                loggingServices.LogError(exc.Message);
             }
         }
     }

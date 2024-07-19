@@ -27,25 +27,22 @@ namespace PhoneContacts.Services
 
         public List<PhoneContact> Readlines()
         {
-            List<PhoneContact> phoneContacts =
-                new List<PhoneContact>();
+            List<PhoneContact> phoneContacts = new List<PhoneContact>();
 
             string[] allLines = File.ReadAllLines(filePath);
 
             foreach (string line in allLines)
             {
                 var contact = new PhoneContact();
-                foreach (var word in line.Split(' '))
+                var words = line.Split(' ');
+
+                if (words.Length > 2 && words[0] == "Name:")
                 {
-                    if (word.Contains(";"))
-                    {
-                        contact.Name = word;
-                    }
-                    else if (word.Contains("+"))
-                    {
-                        contact.PhoneNumber += word;
-                    }
+                    // Extracting the name and phone number correctly
+                    contact.Name = words[1];
+                    contact.PhoneNumber = words[3];
                 }
+
                 phoneContacts.Add(contact);
             }
 

@@ -2,6 +2,6 @@
 {
     internal interface IHomeServices
     { 
-        public void Home();
+        public void LoadMenu();
     }
 }
