@@ -21,22 +21,22 @@ Upon running the application, you will be presented with a menu:
 - **5. Delete contact**: Prompts you to enter the index of the contact you want to delete.
 - **6. Exit**: Exits the application.
 
-### **Menu
+### Menu
 ![Menu]()
 
-### **Adding
+### Adding
 ![Adding]()
 
-### **Serching
+### Serching
 ![Serching]()
 
-### **Updating
+### Updating
 ![Updating]()
 
-### **Deleting
+### Deleting
 ![Deleting]()
 
-### **Exit
+### Exit
 ![Exit]()
 
 ## Contact
