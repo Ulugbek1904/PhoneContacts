@@ -22,22 +22,23 @@ Upon running the application, you will be presented with a menu:
 - **6. Exit**: Exits the application.
 
 ### Menu
-![Menu]()
+![Menu](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Menu.png)
 
 ### Adding
-![Adding]()
+![Adding](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Add.png)
 
 ### Serching
-![Serching]()
+![Serching](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Search.png)
 
 ### Updating
-![Updating]()
+![Updating](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Update.png)
 
 ### Deleting
-![Deleting]()
+![Deleting](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/delete.png)
+![Deleting](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Delete2.png)
 
 ### Exit
-![Exit]()
+![Exit](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Exit.png)
 
 ## Contact
 
