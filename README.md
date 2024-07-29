@@ -22,22 +22,23 @@ Upon running the application, you will be presented with a menu:
 - **6. Exit**: Exits the application.
 
 ### Menu
-![MainMenu]()
+![MainMenu](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/MainMenu.png?raw=true)
 ![Menu](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Menu.png)
 
 ### Adding
 ![Adding](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Add.png)
 
 ### Serching
-![Serch]()
+![Serch](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/search1.png?raw=true)
+![Search](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Search2.png?raw=true)
 ![Serching](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Search.png)
 
 ### Updating
-![update]()
+![update](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/edit1.png?raw=true)
 ![Updating](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Update.png)
 
 ### Deleting
-![Delete]()
+![Delete](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Delete2.png?raw=true)
 ![Deleting](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/delete.png)
 ![Deleting](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Delete2.png)
 
