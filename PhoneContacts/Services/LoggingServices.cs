@@ -1,4 +1,6 @@
-﻿namespace PhoneContacts.Services
+﻿using System;
+
+namespace PhoneContacts.Services
 {
     internal class LoggingServices : ILoggingServices
     {
