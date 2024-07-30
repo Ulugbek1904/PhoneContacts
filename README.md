@@ -21,6 +21,9 @@ Upon running the application, you will be presented with a menu:
 - **5. Delete contact**: Prompts you to enter the index of the contact you want to delete.
 - **6. Exit**: Exits the application.
 
+### Demo
+![Demo](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Demo1.gif?raw=true)
+
 ### Menu
 ![MainMenu](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/MainMenu.png?raw=true)
 ![Menu](https://github.com/Ulugbek1904/PhoneContacts/blob/master/PhoneContacts/Pictures/Menu.png)
